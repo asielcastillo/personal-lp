@@ -1,10 +1,14 @@
 import type React from "react"
 import "@/app/globals.css"
-import { Inter } from "next/font/google"
+import { Poppins } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata } from "next"
 
-const inter = Inter({ subsets: ["latin"] })
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   title: "Asiel - Saxofonista Profissional | Música para Eventos em Tocantins",
@@ -95,7 +99,7 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="msapplication-TileColor" content="#667eea" />
       </head>
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
