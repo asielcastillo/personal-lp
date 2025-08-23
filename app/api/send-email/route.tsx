@@ -9,8 +9,13 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Todos os campos são obrigatórios" }, { status: 400 })
     }
 
-    // Configuração do Resend
-    const resendApiKey = "re_AkKyPjwF_LGrLiaAXjAAqYGG3jMLqQrp2"
+    // Usar variável de ambiente (mais seguro)
+    const resendApiKey = process.env.RESEND_API_KEY
+
+    if (!resendApiKey) {
+      console.error("RESEND_API_KEY não configurada")
+      return NextResponse.json({ error: "Configuração de email não encontrada" }, { status: 500 })
+    }
 
     const emailData = {
       from: "contato@asielsax.com",
