@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
-import { Instagram, Facebook, Mail, Phone } from "lucide-react"
+import { Instagram, Facebook, Phone } from "lucide-react"
+import { ContactForm } from "@/components/contact-form"
 
 export default function ProfilePage() {
   // Informações personalizadas de Asiel
@@ -8,7 +9,7 @@ export default function ProfilePage() {
     name: "Asiel",
     title: "Músico/Professor de Música",
     bio: "Músico profissional especializado em saxofone, com experiência em diversos estilos musicais. Ofereço apresentações exclusivas para casamentos, aniversários e eventos corporativos, trazendo sofisticação e emoção para momentos especiais.",
-    photo: "/placeholder.svg?height=300&width=300", // Placeholder temporário
+    photo: "/images/profile.png", // Foto real do Asiel
     whatsapp: "5563992510109", // Formatado para link do WhatsApp
     email: "asielsax@gmail.com",
     social: {
@@ -18,16 +19,17 @@ export default function ProfilePage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-amber-100 to-teal-100 flex flex-col items-center justify-center p-4">
+    <main className="min-h-screen bg-gradient-to-b from-purple-100 to-amber-100 flex flex-col items-center justify-center p-4">
       <Card className="w-full max-w-md mx-auto bg-white/90 backdrop-blur shadow-xl">
         <CardContent className="p-6">
           <div className="flex flex-col items-center text-center">
-            <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md mb-4">
+            <div className="relative w-36 h-36 rounded-full overflow-hidden border-4 border-white shadow-md mb-4">
               <Image
-                src={profile.photo || "/placeholder.svg?height=300&width=300"}
+                src={profile.photo || "/placeholder.svg"}
                 alt={profile.name}
                 fill
-                className="object-cover"
+                className="object-cover object-top"
+                style={{ objectPosition: "center 20%" }}
                 priority
               />
             </div>
@@ -76,15 +78,7 @@ export default function ProfilePage() {
                 </a>
               )}
 
-              {profile.email && (
-                <a
-                  href={`mailto:${profile.email}`}
-                  className="flex items-center justify-center gap-2 p-3 rounded-lg bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors"
-                >
-                  <Mail size={20} />
-                  <span>Envie-me um email</span>
-                </a>
-              )}
+              <ContactForm />
             </div>
           </div>
         </CardContent>
