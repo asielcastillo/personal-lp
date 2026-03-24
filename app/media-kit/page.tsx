@@ -369,27 +369,25 @@ export default function MediaKitPage() {
             Se você busca uma experiência musical profissional, elegante e adaptada ao estilo do seu evento, a Edu Produções está pronta para atender você.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <a
-              href="https://wa.me/5563992510109?text=Olá! Vi o Media Kit e gostaria de solicitar um orçamento."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-medium rounded-full hover:bg-primary/90 transition-colors shadow-lg"
-            >
-              <Phone size={20} />
-              WhatsApp
-            </a>
-
-            <a
-              href="mailto:asielsax@gmail.com"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-foreground text-foreground font-medium rounded-full hover:bg-foreground hover:text-background transition-colors"
-            >
-              <Mail size={20} />
-              E-mail
-            </a>
-          </div>
+          <a
+            href="https://wa.me/5563992510109?text=Olá! Vi o Media Kit e gostaria de solicitar um orçamento."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-medium rounded-full hover:bg-primary/90 transition-colors shadow-lg mb-12"
+          >
+            <Phone size={20} />
+            Solicitar Orçamento via WhatsApp
+          </a>
 
           <div className="flex flex-wrap justify-center gap-6 text-muted-foreground">
+            <a
+              href="mailto:asielsax@gmail.com"
+              className="flex items-center gap-2 hover:text-primary transition-colors"
+            >
+              <Mail size={20} />
+              asielsax@gmail.com
+            </a>
+
             <a
               href="https://instagram.com/asielcastillo"
               target="_blank"
